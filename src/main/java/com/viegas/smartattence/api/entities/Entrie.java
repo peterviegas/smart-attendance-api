@@ -53,7 +53,6 @@ public class Entrie	implements Serializable {
 		@ManyToOne(fetch = FetchType.EAGER)
 		private Employee employee;
 		
-		
 		public Entrie() {
 			super();
 		}
@@ -150,5 +149,4 @@ public class Entrie	implements Serializable {
 					+ ", creationDate=" + creationDate + ", updateDate=" + updateDate + ", type=" + type
 					+ ", employee=" + employee + "]";
 		}
-
 }
