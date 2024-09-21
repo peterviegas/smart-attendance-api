@@ -38,7 +38,7 @@ private static final long serialVersionUID = 3960436649365666213L;
 	@Column(name = "updateDate", nullable = false)
 	private Date updateDate;
 	
-	@OneToMany(mappedBy = "employee", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "company", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Employee> employees;
 	
 	public Company() {
