@@ -1,6 +1,9 @@
 package com.viegas.smartattence.api.repositories;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.Optional;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -35,7 +38,8 @@ public class CompanyRepositoryTest {
 
     @Test
     public void testBuscarPorCnpj() {
-        Company empresa = this.companyRepository.findByCnpj(CNPJ);
-        assertEquals(CNPJ, empresa.getCnpj());
+    	 Optional<Company> optionalEmpresa = this.companyRepository.findByCnpj(CNPJ);
+         assertTrue(optionalEmpresa.isPresent(), "Company should be present");
+         assertEquals(CNPJ, optionalEmpresa.get().getCnpj());
     }
 }

@@ -24,7 +24,7 @@ public class CompanyServiceImpl implements CompanyService {
 	@Override
 	public Optional<Company> buscarPorCnpj(String cnpj) {
 		log.info("Searching for a company by CNPJ {}", cnpj);
-		return Optional.ofNullable(empresaRepository.findByCnpj(cnpj));
+		return empresaRepository.findByCnpj(cnpj);
 	}
 
 	@Override

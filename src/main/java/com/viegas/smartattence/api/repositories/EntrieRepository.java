@@ -25,4 +25,5 @@ public interface EntrieRepository extends JpaRepository<Entrie, Long> {
 		List<Entrie> findByEmployeeId(@Param("employeeId") Long EmployeeId);
 	
 		Page<Entrie> findByEmployeeId(@Param("employeeId") Long EmployeeId, Pageable pageable);
+		
 }
