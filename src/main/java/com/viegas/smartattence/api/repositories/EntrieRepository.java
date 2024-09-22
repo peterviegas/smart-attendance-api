@@ -15,15 +15,14 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.query.Param;
 
 @Transactional(readOnly = true)
+
+	
+@NamedQueries({
+		@NamedQuery(name = "EntrieRepository.findByEmployeeId", 
+				query = "SELECT lanc FROM Entrie lanc WHERE lanc.employee.id = :employeeId") })
 public interface EntrieRepository extends JpaRepository<Entrie, Long> {
 	
-	@NamedQueries({
-		@NamedQuery(name = "EntrieRepository.findByFuncionarioId", 
-				query = "SELECT lanc FROM Lancamento lanc WHERE lanc.funcionario.id = :funcionarioId") })
-	public interface LancamentoRepository extends JpaRepository<Entrie, Long> {
+		List<Entrie> findByEmployeeId(@Param("employeeId") Long EmployeeId);
 	
-		List<Entrie> findByFuncionarioId(@Param("funcionarioId") Long funcionarioId);
-	
-		Page<Entrie> findByFuncionarioId(@Param("funcionarioId") Long funcionarioId, Pageable pageable);
-	}
+		Page<Entrie> findByEmployeeId(@Param("employeeId") Long EmployeeId, Pageable pageable);
 }
