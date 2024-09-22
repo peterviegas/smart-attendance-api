@@ -10,6 +10,7 @@ The Smart Attendance RESTful API includes the following features:
 - MySQL database with JPA and Spring Data JPA
 - Authentication and authorization with Spring Security and JWT (JSON Web Token) tokens
 - Database migration with Flyway
+- Use the H2 in-memory database to run unit tests.
 - Unit and integration tests with JUnit and Mockito
 - Caching with EhCache
 - Continuous integration with TravisCI
