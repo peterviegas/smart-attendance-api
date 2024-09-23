@@ -26,7 +26,7 @@ import com.viegas.smartattence.api.utils.Response;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/cadastrar-pj")
+@RequestMapping("/api/registration-pj")
 @CrossOrigin(origins = "*")
 public class RegistrationPJController {
 	private static final Logger log = LoggerFactory.getLogger(RegistrationPJController.class);
