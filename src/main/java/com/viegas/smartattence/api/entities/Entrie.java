@@ -2,7 +2,9 @@ package com.viegas.smartattence.api.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Optional;
 
+import com.viegas.smartattence.api.dto.EntrieDTO;
 import com.viegas.smartattence.api.enums.TypeEnum;
 
 import jakarta.persistence.Column;
@@ -65,6 +67,14 @@ public class Entrie	implements Serializable {
 			this.creationDate = creationDate;
 			this.updateDate = updateDate;
 			this.employee = employee;
+		}
+		
+		public Entrie(EntrieDTO obj) {
+			this.id = obj.getId();
+			this.date = obj.getDate();
+			this.description = obj.getDescription();
+			this.location = obj.getLocation();
+			this.employee.setId(obj.getEmployeeId());
 		}
 
 		public Long getId() {

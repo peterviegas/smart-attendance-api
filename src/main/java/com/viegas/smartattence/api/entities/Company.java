@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import com.viegas.smartattence.api.dto.CompanyDTO;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -51,6 +53,12 @@ private static final long serialVersionUID = 3960436649365666213L;
 		this.cnpj = cnpj;
 		this.createDate = createDate;
 		this.updateDate = updateDate;
+	}
+	
+	public Company(CompanyDTO obj) {
+		this.id = obj.getId();
+		this.legalName = obj.getLegalName();
+		this.cnpj = obj.getCnpj();
 	}
 
 	public Long getId() {
